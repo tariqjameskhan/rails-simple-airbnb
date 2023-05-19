@@ -1,2 +1,61 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom bg-light">
+  <div class="container-fluid">
+    <%= link_to "Air BnB", flats_path, class: "navbar-brand" %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <%= link_to "Add a new flat", new_flat_path, class: "btn btn-dark text-light" %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="banner mt-1" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://source.unsplash.com/featured/house);">
+  <div class="container">
+  </div>
+</div>
+
+
+<div class="container margin-top-negative">
+  <%# <div class="container"> %>
+    <div class="row">
+      <div class="col-8">
+        <div class="m-3">
+          <div class="row bg-light mt-3 p-3 position-relative">
+            <h1><%= @flat.name %></h1>
+            <h3><%= @flat.address %></h3>
+          </div>
+          <div class="row bg-light mt-3 p-3">
+            <h2>A little bit more about this flat</h2>
+            <h5><%= @flat.description %></h5>
+            <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/1200x500?access_token=pk.eyJ1IjoidGFyaXFqYW1lc2toYW4iLCJhIjoiY2xnNTNuZXRmMDJ3aTNrazJrY3FhMDF5dCJ9.nlQpvMktyfAiGNFMz_mF2Q'>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="bg-light m-3">
+          <div class="p-3">
+            <h2>Book This Place!</h2>
+            <span>Date from</span>
+
+            <form action>
+              <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
+              <span>Date to</span>
+              <input type="text" class="form-control" placeholder="18/10/2017" aria-label="start-date" aria-describedby="start-date-label">
+              <input type="submit" value="Book" class="btn btn-dark text-light mt-2" style="width: 100%">
+            </form>
+          </div>
+          <div class="p-3">
+            <h2>Details:</h2>
+            <h3 class="fs-6"><%= @flat.number_of_guests %> People</h3>
+            <h3 class="fs-6">£<%= @flat.price_per_night %> per night</h3>
+          </div>
+        </div>
+      </div>
+    </div >
+    <div>
+      <p class="btn btn-dark mt-5"><%= link_to "Back to flats", flats_path, class: "text-white fs-5"%></p>
+    </div>
+  <%# </div> %>
+</div>

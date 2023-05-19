@@ -1,2 +1,36 @@
-<h1>Flats#edit</h1>
-<p>Find me in app/views/flats/edit.html.erb</p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom bg-light">
+  <div class="container-fluid">
+    <%= link_to "Air BnB", flats_path, class: "navbar-brand" %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <%= link_to "Add a new flat", new_flat_path, class: "btn btn-dark text-light" %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <%# <h1>Edit your residence</h1> %>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-10 col-sm-6 bg-light">
+        <h1 class="border-bottom p-3 bg-light">Edit <strong>your</strong> flat</h1>
+        <%= simple_form_for(@flat) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :description %>
+        <%= f.input :number_of_guests %>
+        <%= f.input :price_per_night %>
+        <%= f.submit %>
+         <% end %>
+        <div>
+          <p class="mt-5"><%= link_to "Back to flats", flats_path, class: "btn btn-dark text-light fs-5"%></p>
+        </div>
+      </div>
+    </div >
+  </div>
+</div>
